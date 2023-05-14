@@ -23,12 +23,18 @@ git clone https://github.com/Hotakus/nhsa-policy-spider.git
 ### Directly Run
 If you want to directly run the code, you can follow the steps below:
 
+
 ```shell
 conda create -n nhsa python=3.8.16
 conda activate nhsa
 pip install -r requirements.txt
 python main.py
 ```
+
+```C
+int main
+```
+
 And then, waiting for the results of fetch.  
 The all results are in "documents" folder, and some pictures of articles in 
 "pictures" folder.
