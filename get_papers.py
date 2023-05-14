@@ -90,14 +90,14 @@ def extract_article(req: requests.Response = None, save_name: str = '', content:
 
     soup = BeautifulSoup(text, "html.parser")
     art_main_part = soup.find(id=gov_art_passage_div_id)  # 文章正文主体
-    art_index_num = save_name[:14].replace(' ', '')
+    art_index_num = save_name[:14].replace(' ', '')  # 文章索引代码
     res = ''
 
     pic_url = extract_pic_url(art_main_part)  # 判断是否有图片，有则提取
     if not os.path.exists(pics_folder):
         os.mkdir(pics_folder)
 
-    # OCR提取图片
+    # 如果有图片则提取图片，并使用OCR分析图片内容
     if pic_url:
         pic_name = []
         for i, url in enumerate(pic_url):

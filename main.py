@@ -183,6 +183,7 @@ def _article_download(args):
     self_id = progress.add_task(threading.current_thread().name, total=links_list.__len__())
     time.sleep(0.1)
 
+    # 根据content list循环获取政策网页内容
     for i, link in enumerate(links_list):
         stats = get_website(url=link)
         if isinstance(stats, str):
@@ -385,7 +386,6 @@ def done_prompt():
     print('Press any key to exit')
 
 
-# TODO:conten list
 if __name__ == "__main__":
     content_len = 0
 
