@@ -35,7 +35,8 @@ The all results are in "documents" folder, and some pictures of articles in
 
 ---
 ### Pack
-Use pack tool named "Pyinstaller"
+Use tool -- "Pyinstaller", and turn your conda env to nhsa.   
+Run:
 ```bash
 pyinstall --noconfirm ./artice.exe.spec
 ```
