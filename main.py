@@ -20,13 +20,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
 # project
-from get_papers import save_article, docs_folder, extract_article, pics_folder
-from pro_random import random_user_agent, req_headers
-from pro_thread import ProThread
+from src.get_papers import save_article, docs_folder, extract_article, pics_folder
+from src.pro_random import random_user_agent, req_headers
+from src.pro_thread import ProThread
 
 # from selenium.webdriver.support.wait import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
 # from urllib.parse import urlparse
+
 # misc
 # import random as rand
 # import datetime as dt
