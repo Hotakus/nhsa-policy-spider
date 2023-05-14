@@ -6,8 +6,6 @@
 """
 
 from cnocr import CnOcr
-from threading import Thread
-from time import sleep, ctime
 from pro_thread import *
 
 

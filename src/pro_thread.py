@@ -6,8 +6,6 @@
 """
 
 from threading import Thread
-from time import sleep, ctime
-
 
 class ProThread(Thread):
     def __init__(self, func, args, name=None):

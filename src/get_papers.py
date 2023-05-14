@@ -22,15 +22,6 @@ from ocr import ocr_recognize, ocr_create_threads, \
     ocr_start_threads, ocr_threads_result
 from pro_random import req_headers, random_user_agent
 
-# 政府网站文章基本信息
-gov_art_begin_code = 10310  # 起始文章码
-gov_art_end_code = 6431  # 尾文章码
-gov_art_code_scope = range(gov_art_begin_code, gov_art_end_code, -1)  # 文章码范围
-gov_art_begin_date = dt.datetime(2023, 3, 30)  # 首个文章的日期
-gov_art_end_date = dt.datetime(2017, 1, 19)  # 最后一个文章的日期
-date_format = "%Y/%#m/%#d"  # 日期格式
-file_name_date_format = "%Y_%m_%d"  # 日期格式
-
 # 文章链接结构
 gov_base_url = 'http://www.nhsa.gov.cn/'
 gov_art_passage_div_id: str = 'zoom'  # 文章正文div id
@@ -146,17 +137,3 @@ def save_article(base_dir=docs_folder, art_title: str = '', content: str = '', s
             f.write(content)
 
     return True
-
-
-def got_art(stats, art_date, art_url, id):
-    """
-    当轮询获取到文章时，进行文件操作
-    :param stats: http请求的状态
-    :param art_date: 文章日期
-    :param art_url: 文章链接
-    :param id: 文章序号
-    :return:
-    """
-    content = extract_article(stats['req'])
-    save_article(id.__str__() + '_' + art_date.strftime(file_name_date_format) + content[0], content[1])
-    print("[" + id.__str__() + "]" + " Successfully get: " + art_url)
