@@ -1,1 +1,0 @@
- pyinstaller.exe --noconfirm  .\article.exe.spec
