@@ -6,7 +6,7 @@
 
 ### Description
 
-The project is aim to fetch the political articles of NHSA.
+The project is aim to fetch the political articles of NHSA.  
 It implements:
 - Fetching articles and pictures, and save them into local.
 - Detecting the pictures' content and transform them as text.
