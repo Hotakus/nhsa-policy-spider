@@ -1,5 +1,6 @@
  # -*- mode: python ; coding: utf-8 -*-
 
+import sys ; sys.setrecursionlimit(sys.getrecursionlimit() * 5)
 
 block_cipher = None
 
@@ -38,7 +39,8 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon=['tennis.ico'],
-    noconfirm=True
+    noconfirm=True,
+    hiddenimport='charset_normalizer.md__mypyc'
 )
 coll = COLLECT(
     exe,
