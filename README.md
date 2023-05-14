@@ -15,8 +15,11 @@ It implements:
 
 ---
 ### Start
-1. **Install Anaconda.**  
-2. **Download this repository to your computer.**  
+1. **Install [Anaconda](https://www.anaconda.com/download/).**  
+2. **Download this repository to your computer.**
+```bash
+git clone https://github.com/Hotakus/nhsa-policy-spider.git
+```
 3. **Uncompress the Chrome.7z as folder named Chrome**  
 ---
 ### Directly Run
