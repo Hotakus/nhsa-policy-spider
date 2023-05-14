@@ -45,7 +45,7 @@ def ocr_text_connect(ocr_list: list):
 
 def ocr_create_threads(func, args: list, cnt: int = 0):
     """
-    连续创建线程
+    连续创建OCR识别线程
     ocr_create_threads(ocr_recognize, ['*.jpg', '*.png'])
     :param func: 执行函数
     :param args: pic_name的列表
@@ -103,6 +103,10 @@ import docx
 
 
 def ocr_test():
+    """
+    用于测试
+    :return:
+    """
     name_list = [
         'test0.jpg',
         'test1.jpg',
