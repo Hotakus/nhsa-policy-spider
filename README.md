@@ -40,6 +40,7 @@ Run:
 ```bash
 pyinstall --noconfirm ./artice.exe.spec
 ```
+or double click "pack.bat" in windows system.
 
 and wait a minutes in the dist will generate the exe file
 , the "article.exe"
