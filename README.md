@@ -4,7 +4,7 @@
 
 ---
 
-# Description
+### Description
 
 ---
 The project is aim to fetch the political articles of NHSA.  
@@ -14,7 +14,7 @@ It implements:
 - Compose the original text and pictures' content as docx file.
 
 ---
-# Start
+### Start
 1. **Install Anaconda.**  
 2. **Download this repository to your computer.**  
 3. **Uncompress the Chrome.7z as folder named Chrome**  
