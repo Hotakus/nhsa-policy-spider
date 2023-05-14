@@ -43,15 +43,3 @@ pyinstall --noconfirm ./artice.exe.spec
 
 and wait a minutes in the dist will generate the exe file
 , the "article.exe"
-
-### TODO:
-- [ ] 实现正则表达提取文章
-- [x] 实现指定内容提取
-- [x] 完成批量保存文章(文件名)
-- [x] 完成polling主体
-
-- [x] 实现html图片检测
-- [x] 实现图片文字识别
-- [x] 实现多线程图片识别
-- [x] 重构文章抓取算法
-- [ ] 优化图像识别准确率
