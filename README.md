@@ -31,8 +31,10 @@ pip install -r requirements.txt
 python main.py
 ```
 
-```C
-int main
+```c
+int main() {
+    return nhsa;
+}
 ```
 
 And then, waiting for the results of fetch.  
