@@ -3,7 +3,7 @@
 ---
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/hotakus/nhsa-policy-spider?style=flat-square)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/hotakus/nhsa-policy-spider)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/hotakus/nhsa-policy-spider?style=flat-square)
 
 ---
 
