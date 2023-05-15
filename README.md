@@ -23,9 +23,9 @@ It implements:
 1. **Install [Anaconda](https://www.anaconda.com/download/).**
 2. **Download this repository to your computer.**
 
-```Bash
-git clone https://github.com/Hotakus/nhsa-policy-spider.git
-```
+    ```Bash
+    git clone https://github.com/Hotakus/nhsa-policy-spider.git
+    ```
 
 3. **Download and uncompress the [Chrome.7z](https://github.com/Hotakus/nhsa-policy-spider/releases/download/nps-v1.1.3/Chrome.7z) as folder named Chrome**
 
@@ -59,7 +59,7 @@ Run:
 pyinstall --noconfirm ./artice.exe.spec
 ```
 
-or double click "pack.bat" in windows system.
+or double click "pack.bat" in Windows system.
 
 and wait a minutes in the dist will generate the exe file
 , the "article.exe"
