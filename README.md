@@ -27,7 +27,7 @@ It implements:
 git clone https://github.com/Hotakus/nhsa-policy-spider.git
 ```
 
-3. **Download and uncompress the Chrome.7z as folder named Chrome**
+3. **Download and uncompress the [Chrome.7z](https://github.com/Hotakus/nhsa-policy-spider/releases/download/nps-v1.1.3/Chrome.7z) as folder named Chrome**
 
 ---
 
