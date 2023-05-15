@@ -262,7 +262,7 @@ def _create_download_threads(func, content_list: dict, t_slice_num=1):
         t = DownloadThread(func, v, name='Thread' + i.__str__())
         threads_list.append(t)
 
-    return threads_list
+    return threads_list, slice_list
 
 
 def _start_download_threads(tl: List[DownloadThread], wait: bool = True):
@@ -387,12 +387,37 @@ def done_prompt():
     print('Press any key to exit')
 
 
+def check_files(cl: dict):
+    """
+    校验是否下载完成，未完成任务重新进行
+    :param cl: content list
+    :return:
+    """
+    failed_list = {'links_list': [], 'titles_list': []}
+
+    for i, v in enumerate(cl['titles_list']):
+        fn = docs_folder + v.replace('/', '、') + '.docx'
+        is_exists = os.path.exists(fn)
+
+        if not is_exists:
+            # print(fn)
+            failed_list['links_list'].append(cl['links_list'][i])
+            failed_list['titles_list'].append(cl['titles_list'][i])
+
+    failed_cnt = failed_list['links_list'].__len__()
+    if failed_cnt > 0:
+        mt = art_content_max_page_num
+        if failed_cnt < art_content_max_page_num:
+            mt = failed_cnt
+        tlist, slist = batch_download(failed_list, mt)  # 分批下载准备工作
+        batch_download_start(tlist)  # 分配下载开始
+
+
 if __name__ == "__main__":
     content_len = 0
 
     clist = get_content_list(page_num=art_content_max_page_num)  # 获取目录列表
-    tlist = batch_download(clist, art_content_max_page_num)  # 分批下载准备工作
-    batch_download_start(tlist)  # 分配下载开始
+    check_files(clist)
 
     done_prompt()
 
