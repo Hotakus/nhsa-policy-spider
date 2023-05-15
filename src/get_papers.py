@@ -18,9 +18,9 @@ import datetime as dt
 import docx
 
 # project
-from ocr import ocr_recognize, ocr_create_threads, \
+from .ocr import ocr_recognize, ocr_create_threads, \
     ocr_start_threads, ocr_threads_result
-from pro_random import req_headers, random_user_agent
+from .pro_random import req_headers, random_user_agent
 
 # 文章链接结构
 gov_base_url = 'http://www.nhsa.gov.cn/'

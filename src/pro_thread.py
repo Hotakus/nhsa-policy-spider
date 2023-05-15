@@ -7,6 +7,7 @@
 
 from threading import Thread
 
+
 class ProThread(Thread):
     def __init__(self, func, args, name=None):
         """
