@@ -57,6 +57,8 @@ content_list_path = 'content_list.txt'
 the_browser_path = "./Chrome/App/chrome.exe"
 the_browser_driver_path = "./Chrome/App/chromedriver.exe"
 
+content_len = 0
+
 
 class DownloadThread(ProThread):
     def run(self):
@@ -285,9 +287,9 @@ def batch_download(content_list: dict, slice_num=1):
     return tl
 
 
-def batch_download_start(tl: list, wait: bool = True):
+def batch_download_start(tl: list, progress_len: int = content_len, wait: bool = True):
     global pbar_download_task
-    pbar_download_task = progress.add_task("[cyan]Downloading...", total=content_len)
+    pbar_download_task = progress.add_task("[cyan]Downloading...", total=progress_len)
     time.sleep(1)
     _start_download_threads(tl, wait)
 
@@ -404,18 +406,19 @@ def check_files(cl: dict):
             failed_list['links_list'].append(cl['links_list'][i])
             failed_list['titles_list'].append(cl['titles_list'][i])
 
+    global content_len
     failed_cnt = failed_list['links_list'].__len__()
+    content_len = failed_cnt
     if failed_cnt > 0:
-        mt = art_content_max_page_num
+        mt = art_content_max_page_num  # Max threads
         if failed_cnt < art_content_max_page_num:
             mt = failed_cnt
+
         tlist, slist = batch_download(failed_list, mt)  # 分批下载准备工作
-        batch_download_start(tlist)  # 分配下载开始
+        batch_download_start(tlist, failed_cnt)  # 分配下载开始
 
 
 if __name__ == "__main__":
-    content_len = 0
-
     clist = get_content_list(page_num=art_content_max_page_num)  # 获取目录列表
     check_files(clist)
 
