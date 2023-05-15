@@ -6,7 +6,7 @@
 """
 
 from cnocr import CnOcr
-from pro_thread import *
+from .pro_thread import *
 
 
 class OcrThread(ProThread):
